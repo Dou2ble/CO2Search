@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" rel="stylesheet"/>
+  <title>CO2 Search</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="flex justify-center bg-[url('/media/train.jpg')] py-24">
+      <div class="bg-white grid grid-cols-3 place-items-center p-16 rounded-[2.5rem]">
+        <div>
+          <input type="search" name="origin" id="origin" class="border-4 rounded-lg p-1 ">
+          <ul class="absolute hidden z-10 p-2 rounded-md bg-slate-200 text-blue-500 underline" id="origin-list"></ul>
+        </div>
+        <img src="/media/icons/arrow-right-alt.svg" alt="right arrow">
+        <div>
+          <input type="search" name="destination" id="destination" class="border-4 rounded-lg p-1 ">
+          <ul class="absolute hidden z-10 p-2 rounded-md bg-slate-200 text-blue-500 underline" id="destination-list"></ul>
+        </div>
+        <button id="search" class="col-span-3 capitalize text-4xl mt-10 border-2 border-neutral-900 p-2 rounded-lg">search</button>
+      </div>
+    </div>
+  
+
+
+
+  <br><br><br><br><br>
+  <div class="flex justify-center">
+    <div class="grid grid-cols-2">
+      <div id="osm-map" class="h-[600px] w-[600px] z-0"></div>
+      <div>
+        <ul id="route-list"></ul>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    Källa för värderna som används i CO2 beräkningarna: https://klimatsmartsemester.se/transportmedelsberakningar
+  </div>
+
+</body>
+
+
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+<script src="https://unpkg.com/geolib@3.3.3/lib/index.js"></script>
+<script src="/script.js"></script>
+</html>
